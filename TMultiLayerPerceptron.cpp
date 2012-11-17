@@ -30,6 +30,7 @@ TMultiLayerPerceptron::TMultiLayerPerceptron(const QString &xmlfile)
 			}
 		}
 	}
+    mlpIn.close();
 }
 
 QVector<double> TMultiLayerPerceptron::recognize(const QVector<double> &input)
@@ -41,13 +42,6 @@ QVector<double> TMultiLayerPerceptron::recognize(const QVector<double> &input)
 	}
 	mNetworkOut=tmp;
 	return mNetworkOut;
-}
-
-void TMultiLayerPerceptron::setActivationFunction(int layer
-												  , ExpSigmoidal &activationFunction)
-{
-	Q_ASSERT(layer <= mLayers.size());
-	mLayers[layer].setActivationFunction(activationFunction);
 }
 
 void TMultiLayerPerceptron::learn(const QVector<double> &expectedResult)

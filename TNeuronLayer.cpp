@@ -49,12 +49,6 @@ QVector<double> TNeuronLayer::getResult(const QVector<double> &input)
 	return mLayerOut;
 }
 
-void TNeuronLayer::setActivationFunction(ExpSigmoidal &newActivationFunction)
-{
-	mActivationFunction = newActivationFunction;
-}
-
-
 QVector<double> TNeuronLayer::showResult() const
 {
 	return mLayerOut;

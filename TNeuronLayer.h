@@ -18,7 +18,6 @@ public:
 	TNeuronLayer(const QDomElement &layer);
 	void addNeuron(const TNeuron &neuron);
 	const int getDimension() const;
-	void setActivationFunction(ExpSigmoidal &newActivationFunction);
 	//вычисление выхода слоя
 	QVector<double> getResult(const QVector<double> &input);
 	QVector<double> showResult() const;

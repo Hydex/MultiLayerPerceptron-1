@@ -12,12 +12,11 @@ private:
 	QList<TNeuronLayer> mLayers;
 	//выход всей сети
 	QVector<double> mNetworkOut;
-	QVector<double> mNetworkInput;
+    QVector<double> mNetworkInput;
 public:
 	TMultiLayerPerceptron(int numOfLayers, int dim[], int dimOfInput);
 	TMultiLayerPerceptron(const QString &xmlfile);
 	QVector<double> recognize(const QVector<double> &input);
-	void setActivationFunction(int layer, ExpSigmoidal &activationFunction);
 	void learn(const QVector<double> &expectedResult);
 	bool save(const QString &xmlFile);
 
