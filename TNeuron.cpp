@@ -53,7 +53,7 @@ double TNeuron::getResult(const QVector<double> &input
 
 // обучение методом обратного распространения ошибки: веса корректируются в соответствии с входными данными
 // и оценкой ошибки dj для конкретного нейрона
-QVector<double> TNeuron::learn(double dj, QVector<double> input)
+QVector<double> TNeuron::learn(double dj, const QVector<double> &input)
 {
 	QVector<double> correction;
 	Q_ASSERT(input.size() == mSynapticWeights.size());

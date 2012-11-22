@@ -10,11 +10,11 @@ class TMultiLayerPerceptron
 {
 
 public:
-	TMultiLayerPerceptron(int numOfLayers, int dim[], int dimOfInput);
+    TMultiLayerPerceptron(const int numOfLayers, const int dim[], const int dimOfInput);
 	TMultiLayerPerceptron(const QString &xmlfile);
 	QVector<double> recognize(const QVector<double> &input);
 	void learn(const QVector<double> &expectedResult);
-	bool save(const QString &xmlFile);
+    bool save(const QString &xmlFile);
 
 private:
     QList<TNeuronLayer> mLayers;

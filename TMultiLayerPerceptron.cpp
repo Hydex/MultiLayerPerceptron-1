@@ -1,8 +1,8 @@
 #include "TMultiLayerPerceptron.h"
 
-TMultiLayerPerceptron::TMultiLayerPerceptron(int numOfLayers
-											 , int dim[]
-											 , int dimOfInput)
+TMultiLayerPerceptron::TMultiLayerPerceptron(const int numOfLayers
+                                             , const int dim[]
+                                             , const int dimOfInput)
 {
 	ExpSigmoidal activationFunction;
 	TNeuronLayer firstLayer(activationFunction, dimOfInput, dim[0]);
