@@ -7,10 +7,6 @@
 
 class TNeuronLayer
 {
-private:
-	ExpSigmoidal mActivationFunction;
-	QList<TNeuron> mNeurons;
-	QVector<double> mLayerOut;
 public:
 	TNeuronLayer(ExpSigmoidal &activationFunction
 				 , int dimOfInput
@@ -25,4 +21,9 @@ public:
 	QVector<double> learn(QVector<double> &correction, const QVector<double> &input);
 
 	QDomElement save(QDomDocument &mlp, int layerNumber);
+
+private:
+    ExpSigmoidal mActivationFunction;
+    QList<TNeuron> mNeurons;
+    QVector<double> mLayerOut;
 };
