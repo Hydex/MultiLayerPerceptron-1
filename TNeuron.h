@@ -6,8 +6,6 @@
 
 class TNeuron
 {
-private:
-	QVector<double> mSynapticWeights;
 public:
 	TNeuron(int countOfSynWeights);
 	TNeuron(const QDomElement &neuron);
@@ -22,4 +20,6 @@ public:
 
 	static const double nn = 0.01;     //0 < n < 1 множитель, задающий скорость обучения
 
+private:
+    QVector<double> mSynapticWeights;
 };
