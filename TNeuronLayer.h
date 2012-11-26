@@ -23,7 +23,7 @@ public:
 	QDomElement save(QDomDocument &mlp, int layerNumber);
 
 private:
-    ExpSigmoidal mActivationFunction;
-    QList<TNeuron> mNeurons;
-    QVector<double> mLayerOut;
+	ExpSigmoidal mActivationFunction;
+	QList<TNeuron> mNeurons;
+	QVector<double> mLayerOut;
 };
