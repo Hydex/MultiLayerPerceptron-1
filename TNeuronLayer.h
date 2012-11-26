@@ -18,12 +18,12 @@ public:
 	QVector<double> getResult(const QVector<double> &input);
 	QVector<double> showResult() const;
 	//обучение слоя методом обратного распространения ошибки
-    QVector<double> learn(QVector<double> &correction, const QVector<double> &input);
+	QVector<double> learn(QVector<double> &correction, const QVector<double> &input);
 
-    QDomElement save(QDomDocument &mlp, int layerNumber);
+	QDomElement save(QDomDocument &mlp, int layerNumber);
 
 private:
-    ExpSigmoidal mActivationFunction;
-    QList<TNeuron> mNeurons;
-    QVector<double> mLayerOut;
+	ExpSigmoidal mActivationFunction;
+	QList<TNeuron> mNeurons;
+	QVector<double> mLayerOut;
 };

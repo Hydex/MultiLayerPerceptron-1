@@ -6,7 +6,7 @@ QVector<double> chek(const QVector<double> &point, double r)
 {
 	QVector<double> res;
 	double sum = 0;
-    for (int i = 0; i < point.size(); i++) {
+	for (int i = 0; i < point.size(); i++) {
 		sum += point.at(i) * point.at(i);
 	}
 	res << (sum <= r * r);
@@ -209,13 +209,13 @@ QList<QVector<double> > sampleGen()
 
 int main()
 {
-	int dim[]={6, 6, 1};
+	int dim[]={6, 2, 1};
 	TMultiLayerPerceptron mlp(3, dim, 6);
 	QVector<double> point, tmp;
 	QList<QVector<double> > sample = sampleGen();
 	double a1 = 0, b1 = 0, c1 = 0, r = 2, a11 = 0, b11 = 0, c11 = 0;
-    for (int i = 0; i < 1000; i++) {
-        for (int j = 0; j < sample.size(); j += 2) {
+	for (int i = 0; i < 1000; i++) {
+		for (int j = 0; j < sample.size(); j += 2) {
 			tmp = mlp.recognize(sample.at(j));
 			mlp.learn(sample.at(j+1));
 		}
@@ -225,7 +225,7 @@ int main()
 		point << 0.1 << -0.1 << 0.3 << 0 << 0 << 0;
 		qDebug() << point << endl;
 		double a = mlp.recognize(point)[0] - chek(point, r)[0];
-        if ((a1 > a && -a1 < -a) || (a1 < a && -a1 > -a)) {
+		if ((a1 > a && -a1 < -a) || (a1 < a && -a1 > -a)) {
 			qDebug() << a << " down";
 			a11++;
 		}
@@ -238,7 +238,7 @@ int main()
 		qDebug() << point << endl;
 		double b = mlp.recognize(point)[0] - chek(point, r)[0];
 
-        if ((b1 > b && b > 0) || ((b1 < b && b < 0))) {
+		if ((b1 > b && b > 0) || ((b1 < b && b < 0))) {
 			qDebug() << b << " down";
 			b11++;
 		}
@@ -250,7 +250,7 @@ int main()
 		point << 0 << 0 << 0 << 0 << 0 << 0;
 		qDebug() << point << endl;
 		double c = mlp.recognize(point)[0] - chek(point, r)[0];
-        if ((c1 > c && c > 0) || ((c1 < c && c < 0))) {
+		if ((c1 > c && c > 0) || ((c1 < c && c < 0))) {
 			qDebug() << c << " down";
 			c11++;
 		}
@@ -263,9 +263,9 @@ int main()
 	qDebug() << "c" << c11;
 
 	mlp.save("mlp.xml");
-//	TMultiLayerPerceptron mlp("mlp.xml");
-//	QVector<double> a;
-//	a << 12 << 6546 << 0;
-//	qDebug() << a << endl << mlp.recognize(a);
+	//	TMultiLayerPerceptron mlp("mlp.xml");
+	//	QVector<double> a;
+	//	a << 12 << 6546 << 0;
+	//	qDebug() << a << endl << mlp.recognize(a);
 	return 0;
 }
