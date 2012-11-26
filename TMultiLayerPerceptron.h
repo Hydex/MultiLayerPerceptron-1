@@ -11,9 +11,9 @@ class TMultiLayerPerceptron
 
 public:
     TMultiLayerPerceptron(const int numOfLayers, const int dim[], const int dimOfInput);
-	TMultiLayerPerceptron(const QString &xmlfile);
+    TMultiLayerPerceptron(const QString &xmlfile);
 	QVector<double> recognize(const QVector<double> &input);
-	void learn(const QVector<double> &expectedResult);
+    void learn(const QVector<double> &expectedResult);
     bool save(const QString &xmlFile);
 
 private:
