@@ -29,23 +29,6 @@ TNeuron::TNeuron(const QDomElement &neuron)
 	Q_ASSERT(mSynapticWeights.size() == neuron.attribute("countOfWeights").toDouble());
 }
 
-void TNeuron::addWeight(double newWeight, int position)
-{
-	Q_ASSERT(position >= 0);
-	mSynapticWeights.insert(position, newWeight);
-}
-
-//void TNeuron::addWeight(double newWeight)
-//{
-//	mSynapticWeights << newWeight;
-//}
-
-//void TNeuron::setWeights(const QVector<double> &newWeights)
-//{
-//	Q_ASSERT(mSynapticWeights.size() == newWeights.size());
-//	mSynapticWeights = newWeights;
-//}
-
 double TNeuron::getResult(const QVector<double> &input
 						  , ExpSigmoidal &activationFunction)
 {
